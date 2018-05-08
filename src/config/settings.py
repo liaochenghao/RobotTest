@@ -21,4 +21,4 @@ APP_SECRET = '44c699343b2f41c0b1b069e01411465d'
 #     'password': '1q2w3e4r!'
 # }
 
-micro_service_domain = 'http://47.92.115.126:7071'
+# micro_service_domain = 'http://47.92.115.126:7071'
