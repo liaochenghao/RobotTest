@@ -5,5 +5,5 @@ requests==2.17.3
 sqlparse==0.2.3
 tornado==4.5.1
 WeRoBot==1.1.1
-redis==2.10.6
+
 
