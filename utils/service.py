@@ -7,7 +7,7 @@ class BaseHttpServer:
     @staticmethod
     def get(url, params):
         res = requests.get(url=url, params=params)
-        return res.json()['data']
+        return res.json()['access_token']
 
     @staticmethod
     def post(url, json_data):
@@ -25,7 +25,7 @@ class WeixinServer:
               % (APP_ID, APP_SECRET)
         params = {'app_id': APP_ID, 'app_secret': APP_SECRET}
         data = BaseHttpServer.get(url, params)
-        return data['access_token']
+        return data
 
     # @staticmethod
     # def send_text_message(openid, content):
@@ -96,18 +96,18 @@ class WeixinServer:
     #     data = BaseHttpServer.post(url, json_data)
     #     return data['qr_img_url']
     #
-    # @staticmethod
-    # def img_content_send(access_token, openid, articles):
-    #     url = "%s/api/weixin/service_center/send_img_content_message/" % micro_service_domain
-    #     data = {
-    #         "access_token": access_token,
-    #         "openid": openid,
-    #         "articles": articles
-    #     }
-    #     data = BaseHttpServer.post(url, json_data=data)
-    #     return data
-    #
-    # @staticmethod
+    @staticmethod
+    def img_content_send(access_token, openid, articles):
+        url = "%s/api/weixin/service_center/send_img_content_message/" % micro_service_domain
+        data = {
+            "access_token": access_token,
+            "openid": openid,
+            "articles": articles
+        }
+        data = BaseHttpServer.post(url, json_data=data)
+        return data
+
+    @staticmethod
     def upload_medias(media_type, media_file, openid, access_token):
         """上传图片"""
         with open(media_file, "rb") as upload_media_file:
