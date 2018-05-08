@@ -18,6 +18,7 @@ config = dict(
     APP_SECRET=APP_SECRET,
     ENCODING_AES_KEY=None
 )
+
 robot = WeRoBot(config=config)
 
 
