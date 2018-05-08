@@ -1,6 +1,6 @@
 # coding: utf-8
 import pymysql
-import redis
+# import redis
 
 from src.config.settings import db_config, REDIS_CONFIG
 
