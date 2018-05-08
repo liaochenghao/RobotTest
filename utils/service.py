@@ -120,7 +120,7 @@ class WeixinServer:
                 "touser": openid,
                 "msgtype": "image",
                 "image": {
-                    "media_id": 'noK49V6hsstPONhEuW-rFlq_6xNHdSQQk-qALOdin76PmMO3HED6kgqmVSGlKHGf'
+                    "media_id": '4pKcKyalpsXs3XCOC79dIDh7sMboTaLt3iUUuE-KPjKhKjMgcrTnRY-f6OZK1Xjw'
                 }
             }
             res = requests.post(url=url, json=data)

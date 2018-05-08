@@ -93,9 +93,9 @@ def handle_text_message(message):
     content = message.content
     openid = message.source
 
-    # if content in ['报告', '小黄', '小黄报告']:
-    #     access_token = WeixinServer.get_access_token()
-    #     baogao_func(access_token=access_token, openid=openid)
+    if content in ['报告', '小黄', '小黄报告']:
+        access_token = WeixinServer.get_access_token()
+        baogao_func(access_token=access_token, openid=openid)
     # if content in ['历史', '历史上的留学生']:
     #     access_token = WeixinServer.get_access_token()
     #     history_func(access_token=access_token, openid=openid)
@@ -186,7 +186,7 @@ def handle_text_message(message):
         return text
 
     if content == '福利':
-        media_file = r'/root/project/RobotTest/media/north.jpg'
+        media_file = r'/root/project/RobotTest/media/fuli.jpg'
         media_type = 'image'
         access_token = WeixinServer.get_access_token()
         res = WeixinServer.upload_medias(media_type, media_file, openid, access_token)
