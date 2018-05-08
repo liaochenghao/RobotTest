@@ -79,10 +79,10 @@ def create_menu():
             }
         ]
     }
-    access_token = WeixinServer.get_access_token()
-    posturl = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=" + access_token
-    response = requests.post(posturl, data=menu)
-    print(response.content)
-
-
-create_menu()
+#     access_token = WeixinServer.get_access_token()
+#     posturl = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=" + access_token
+#     response = requests.post(posturl, data=menu)
+#     print(response.content)
+#
+#
+# create_menu()
