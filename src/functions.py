@@ -186,7 +186,7 @@ def handle_text_message(message):
         return text
 
     if content == '福利':
-        media_file = r'/root/project/NorthAmericaStuWeixinRobot/media/north.jpg'
+        media_file = r'/root/project/RobotTest/media/north.jpg'
         media_type = 'image'
         access_token = WeixinServer.get_access_token()
         res = WeixinServer.upload_medias(media_type, media_file, openid, access_token)

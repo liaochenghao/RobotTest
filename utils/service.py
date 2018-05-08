@@ -108,20 +108,20 @@ class WeixinServer:
     #     return data
     #
     # @staticmethod
-    # def upload_medias(media_type, media_file, openid, access_token):
-    #     """上传图片"""
-    #     with open(media_file, "rb") as upload_media_file:
-    #         # url = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=%s" % (access_token, media_type)
-    #         # res = requests.post(url, files={"media": upload_media_file})
-    #         # print(res.content)
-    #         # print(res.text)
-    #         url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
-    #         data = {
-    #             "touser": openid,
-    #             "msgtype": "image",
-    #             "image": {
-    #                 "media_id": 'noK49V6hsstPONhEuW-rFlq_6xNHdSQQk-qALOdin76PmMO3HED6kgqmVSGlKHGf'
-    #             }
-    #         }
-    #         res = requests.post(url=url, json=data)
-    #         return res.json()
+    def upload_medias(media_type, media_file, openid, access_token):
+        """上传图片"""
+        with open(media_file, "rb") as upload_media_file:
+            # url = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=%s" % (access_token, media_type)
+            # res = requests.post(url, files={"media": upload_media_file})
+            # print(res.content)
+            # print(res.text)
+            url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
+            data = {
+                "touser": openid,
+                "msgtype": "image",
+                "image": {
+                    "media_id": 'noK49V6hsstPONhEuW-rFlq_6xNHdSQQk-qALOdin76PmMO3HED6kgqmVSGlKHGf'
+                }
+            }
+            res = requests.post(url=url, json=data)
+            return res.json()
