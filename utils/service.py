@@ -98,7 +98,7 @@ class WeixinServer:
     #
     @staticmethod
     def img_content_send(access_token, openid, articles):
-        url = "%s/api/weixin/service_center/send_img_content_message/" % micro_service_domain
+        url = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=%s' % access_token
         data = {
             "access_token": access_token,
             "openid": openid,

@@ -24,17 +24,17 @@ def call_func(access_token, openid):
     return
 
 
-# def baogao_func(access_token, openid):
-#     articles = [
-#         {
-#             "title": "小黄报告 | 北美留学生专栏",
-#             "description": "用数据看北美",
-#             "url": "http://mp.weixin.qq.com/s?__biz=MzA5NjUzNDM2Nw==&mid=510525560&idx=1&sn=46f2682a4d281c002c06709d33131d93&chksm=0b340a483c43835ea04b1741b1e6d731e21829105aef52bc4e489c722991e3e3b61569d7b1be#rd",
-#             "picurl": "http://apply.chinasummer.org/media/auto_reply/baogao.png"
-#         }
-#     ]
-#     WeixinServer.img_content_send(access_token=access_token, openid=openid, articles=articles)
-#     return
+def baogao_func(access_token, openid):
+    articles = [
+        {
+            "title": "小黄报告 | 北美留学生专栏",
+            "description": "用数据看北美",
+            "url": "http://mp.weixin.qq.com/s?__biz=MzA5NjUzNDM2Nw==&mid=510525560&idx=1&sn=46f2682a4d281c002c06709d33131d93&chksm=0b340a483c43835ea04b1741b1e6d731e21829105aef52bc4e489c722991e3e3b61569d7b1be#rd",
+            "picurl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525868855814&di=8a35702fa0a57de2dd064aa9e8a6bb13&imgtype=0&src=http%3A%2F%2Fimg761.ph.126.net%2F_h_u6CHDuDYn6XCLO3PnsA%3D%3D%2F4805903752357751721.jpg"
+        }
+    ]
+    WeixinServer.img_content_send(access_token=access_token, openid=openid, articles=articles)
+    return
 
 
 def cp_func(access_token, openid):
@@ -93,9 +93,9 @@ def handle_text_message(message):
     content = message.content
     openid = message.source
 
-    # if content in ['报告', '小黄', '小黄报告']:
-    #     access_token = WeixinServer.get_access_token()
-    #     baogao_func(access_token=access_token, openid=openid)
+    if content in ['报告', '小黄', '小黄报告']:
+        access_token = WeixinServer.get_access_token()
+        baogao_func(access_token=access_token, openid=openid)
     # if content in ['历史', '历史上的留学生']:
     #     access_token = WeixinServer.get_access_token()
     #     history_func(access_token=access_token, openid=openid)
